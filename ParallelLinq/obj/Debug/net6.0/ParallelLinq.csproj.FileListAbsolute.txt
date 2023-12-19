@@ -1,0 +1,14 @@
+C:\Users\User\Documents\HWCSharp\ParallelLinq\ParallelLinq\obj\Debug\net6.0\ParallelLinq.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\HWCSharp\ParallelLinq\ParallelLinq\obj\Debug\net6.0\ParallelLinq.AssemblyInfoInputs.cache
+C:\Users\User\Documents\HWCSharp\ParallelLinq\ParallelLinq\obj\Debug\net6.0\ParallelLinq.AssemblyInfo.cs
+C:\Users\User\Documents\HWCSharp\ParallelLinq\ParallelLinq\obj\Debug\net6.0\ParallelLinq.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\HWCSharp\ParallelLinq\ParallelLinq\bin\Debug\net6.0\ParallelLinq.exe
+C:\Users\User\Documents\HWCSharp\ParallelLinq\ParallelLinq\bin\Debug\net6.0\ParallelLinq.deps.json
+C:\Users\User\Documents\HWCSharp\ParallelLinq\ParallelLinq\bin\Debug\net6.0\ParallelLinq.runtimeconfig.json
+C:\Users\User\Documents\HWCSharp\ParallelLinq\ParallelLinq\bin\Debug\net6.0\ParallelLinq.dll
+C:\Users\User\Documents\HWCSharp\ParallelLinq\ParallelLinq\bin\Debug\net6.0\ParallelLinq.pdb
+C:\Users\User\Documents\HWCSharp\ParallelLinq\ParallelLinq\obj\Debug\net6.0\ParallelLinq.dll
+C:\Users\User\Documents\HWCSharp\ParallelLinq\ParallelLinq\obj\Debug\net6.0\refint\ParallelLinq.dll
+C:\Users\User\Documents\HWCSharp\ParallelLinq\ParallelLinq\obj\Debug\net6.0\ParallelLinq.pdb
+C:\Users\User\Documents\HWCSharp\ParallelLinq\ParallelLinq\obj\Debug\net6.0\ParallelLinq.genruntimeconfig.cache
+C:\Users\User\Documents\HWCSharp\ParallelLinq\ParallelLinq\obj\Debug\net6.0\ref\ParallelLinq.dll
