@@ -72,7 +72,12 @@ namespace TestConsole
             IHost host = Host.CreateDefaultBuilder(args)
                         .ConfigureServices(services =>
                         {
-                            services.AddSingleton<IInformationSought, SimpleLinq>();
+                            services.AddSingleton<IInformationSought>(serviceProvider =>
+                            {
+                                var simpleLinq = serviceProvider.GetRequiredService<SimpleLinq>();
+                                return new FacadeInformationSought<Unit>(simpleLinq);
+                            });
+                            services.AddSingleton<SimpleLinq>();
                             services.AddHostedService<Startup>();
                         })
                         .Build();
