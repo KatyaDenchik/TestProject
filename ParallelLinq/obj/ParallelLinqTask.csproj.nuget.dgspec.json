@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\HWCSharp\\ParallelLinq\\ParallelLinq\\ParallelLinqTask.csproj": {}
+    "C:\\Users\\User\\Documents\\TestProject\\ParallelLinq\\ParallelLinqTask.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\HWCSharp\\ParallelLinq\\ParallelLinq\\ParallelLinqTask.csproj": {
+    "C:\\Users\\User\\Documents\\TestProject\\ParallelLinq\\ParallelLinqTask.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\HWCSharp\\ParallelLinq\\ParallelLinq\\ParallelLinqTask.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\TestProject\\ParallelLinq\\ParallelLinqTask.csproj",
         "projectName": "ParallelLinqTask",
-        "projectPath": "C:\\Users\\User\\Documents\\HWCSharp\\ParallelLinq\\ParallelLinq\\ParallelLinqTask.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\TestProject\\ParallelLinq\\ParallelLinqTask.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\HWCSharp\\ParallelLinq\\ParallelLinq\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\TestProject\\ParallelLinq\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

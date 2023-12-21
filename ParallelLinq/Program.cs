@@ -1,4 +1,6 @@
-﻿using ParallelLinqTask;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using ParallelLinqTask;
 using ParallelLinqTask.Interfaces;
 using System;
 using System.Diagnostics;
@@ -12,7 +14,7 @@ namespace TestConsole
         {
             get
             {
-                Task.Delay(TimeSpan.FromSeconds(2)).Wait();
+                Task.Delay(TimeSpan.FromSeconds(0.2)).Wait();
                 return name;
             }
 
@@ -23,7 +25,7 @@ namespace TestConsole
         {
             get
             {
-                Task.Delay(TimeSpan.FromSeconds(2)).Wait();
+                Task.Delay(TimeSpan.FromSeconds(0.2)).Wait();
                 return isExist;
             }
 
@@ -67,18 +69,16 @@ namespace TestConsole
             //сделать обычными средствами и с использованием параллельных вычеслений (Linq и класс Parallel)
             //вывести время выполнения последовательной и параллельной логики например: последовательный поиск всех присутствующих юнитов потратил n.nnn секунд
 
+            IHost host = Host.CreateDefaultBuilder(args)
+                        .ConfigureServices(services =>
+                        {
+                            services.AddSingleton<IInformationSought, SimpleLinq>();
+                            services.AddHostedService<Startup>();
+                        })
+                        .Build();
 
-            IInformationSought simpleOutput = new SimpleLinq();
-            IInformationSought parallelOutput = new ParallelLinq();
+            host.Run();
 
-            Console.WriteLine("Обычный linq");
-            var rezSimpleLinq = simpleOutput.GetSortCollection(Units, unit => unit.IsExist);
-            rezSimpleLinq.Select(unit => unit.Name).ToList().ForEach(Console.WriteLine);
-            Console.WriteLine("\n");
-
-            Console.WriteLine("Parallel linq");
-            var rezParallelLinq = parallelOutput.GetSortCollection(Units, unit => unit.IsExist);
-            rezParallelLinq.Select(unit => unit.Name).ToList().ForEach(Console.WriteLine);
         }
     }
 }

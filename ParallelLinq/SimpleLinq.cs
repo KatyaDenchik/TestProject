@@ -11,10 +11,9 @@ namespace ParallelLinqTask
 {
     public class SimpleLinq : IInformationSought
     {
-        public IEnumerable<T> GetSortCollection<T>(IEnumerable<T> collection, Func<T, bool> predicate)
+        public IEnumerable<T> GetSortCollection<T>(IEnumerable<T> collection, Func<T, bool> predicate) where T : Unit
         {
             var rez = collection.Where(predicate);
-
             return rez;
         }
     }
