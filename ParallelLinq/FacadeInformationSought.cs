@@ -8,7 +8,7 @@ using TestConsole;
 
 namespace ParallelLinqTask
 {
-    public class FacadeInformationSought<T> : IInformationSought
+    public class FacadeInformationSought : IInformationSought
     {
         private readonly IInformationSought linq;
 
