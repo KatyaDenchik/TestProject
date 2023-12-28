@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ParallelLinqTask.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using TestConsole;
 
 namespace ParallelLinqTask
 {
-    public class LoggingToTxt
+    public class LoggingToTxt : ILogger
     {
         public void LogToTxt<T>(IEnumerable<T> collection) where T : Unit
         {

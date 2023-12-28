@@ -72,7 +72,13 @@ namespace TestConsole
             IHost host = Host.CreateDefaultBuilder(args)
              .ConfigureServices(services =>
              {
-                 services.AddSingleton<IInformationSought, FacadeInformationSought>(s => new(new ParallelLinq(), new LoggingToTxt()));
+                 services.AddScoped<ILogger, LoggingToTxt>();
+                 services.AddScoped<ParallelLinq>();
+
+                 services.AddSingleton<IInformationSought, FacadeInformationSought>(s => new(
+                     s.GetService<ParallelLinq>(),
+                     s.GetService<ILogger>()
+                     ));
                  services.AddHostedService<Startup>();
              })
              .Build();

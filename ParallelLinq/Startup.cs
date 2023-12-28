@@ -54,7 +54,7 @@ namespace ParallelLinqTask
         public void Start()
         {
             var rezSimpleLinq = sorter.GetSortCollection(Units, unit => unit.IsExist);
-            rezSimpleLinq.AsParallel().ForAll(Unit => { Console.WriteLine(Unit.Name); });
+            rezSimpleLinq.ToList().ForEach(Unit => { Console.WriteLine(Unit.Name); });
         }
     }
 }
