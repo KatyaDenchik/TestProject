@@ -70,12 +70,12 @@ namespace TestConsole
             //вывести время выполнения последовательной и параллельной логики например: последовательный поиск всех присутствующих юнитов потратил n.nnn секунд
 
             IHost host = Host.CreateDefaultBuilder(args)
-                        .ConfigureServices(services =>
-                        {
-                            services.AddSingleton<IInformationSought, FacadeInformationSought>(s=>new(new ParallelLinq()));
-                            services.AddHostedService<Startup>();
-                        })
-                        .Build();
+             .ConfigureServices(services =>
+             {
+                 services.AddSingleton<IInformationSought, FacadeInformationSought>(s => new(new ParallelLinq(), new LoggingToTxt()));
+                 services.AddHostedService<Startup>();
+             })
+             .Build();
 
             host.Run();
 

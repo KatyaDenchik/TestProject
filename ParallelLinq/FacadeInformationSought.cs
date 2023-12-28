@@ -11,31 +11,21 @@ namespace ParallelLinqTask
     public class FacadeInformationSought : IInformationSought
     {
         private readonly IInformationSought linq;
+        private readonly LoggingToTxt loggingToTxt;
 
-        public FacadeInformationSought(IInformationSought linq)
+        public FacadeInformationSought(IInformationSought linq, LoggingToTxt loggingToTxt)
         {
             this.linq = linq;
+            this.loggingToTxt = loggingToTxt;
         }
 
         public IEnumerable<T> GetSortCollection<T>(IEnumerable<T> collection, Func<T, bool> predicate) where T : Unit
         {
-            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string filePath = Path.Combine(desktopPath, "log.txt");
-
             var sortedCollection = linq.GetSortCollection(collection, predicate);
 
-            using (StreamWriter writer = new StreamWriter(filePath))
-            {
-                foreach (var unit in sortedCollection)
-                {
-                    writer.WriteLine(unit.Name);
-                }
-            }
+            loggingToTxt.LogToTxt(sortedCollection);
 
-            System.Diagnostics.Process.Start("notepad.exe", filePath);
-
-
-            return linq.GetSortCollection(collection, predicate);
+            return sortedCollection;
         }
     }
 }
